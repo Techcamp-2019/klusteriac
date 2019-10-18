@@ -1,0 +1,18 @@
+apiVersion: edgefs.rook.io/v1
+kind: Cluster
+metadata:
+  name: rook-edgefs
+  namespace: rook-edgefs
+spec:
+  edgefsImageName: edgefs/edgefs:1.2.64
+  serviceAccount: rook-edgefs-cluster
+  dataDirHostPath: /data
+  storage:
+    useAllNodes: true
+  # A key/value list of annotations
+  annotations:
+  #  all:
+  #    key: value
+  #  prepare:
+  #  mgr:
+  #  target:
