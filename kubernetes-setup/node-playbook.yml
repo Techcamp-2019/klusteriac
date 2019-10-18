@@ -83,6 +83,7 @@
       path: /etc/default/kubelet
       create: yes
       line: KUBELET_EXTRA_ARGS=--node-ip={{ node_ip }}
+      create: yes
 
   - name: Restart kubelet
     service:

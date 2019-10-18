@@ -82,7 +82,7 @@
     lineinfile:
       path: /etc/default/kubelet
       line: KUBELET_EXTRA_ARGS=--node-ip={{ node_ip }}
-      create: 1
+      create: yes
 
   - name: Restart kubelet
     service:
@@ -102,7 +102,7 @@
 
   - name: Install calico pod network
     become: false
-    command: kubectl create -f https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/hosted/calico.yaml
+    command: kubectl create -f https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/hosted/calico.yaml
 
   - name: Generate join command
     command: kubeadm token create --print-join-command
