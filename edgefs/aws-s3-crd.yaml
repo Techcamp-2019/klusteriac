@@ -1,0 +1,34 @@
+apiVersion: edgefs.rook.io/v1
+kind: S3
+metadata:
+  name: s301
+  namespace: rook-edgefs
+spec:
+  instances: 3
+  #s3type: s3s
+  #chunkCacheSize: 1Gi
+  # A key/value list of annotations
+  annotations:
+  #  key: value
+  placement:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: role
+  #          operator: In
+  #          values:
+  #          - s3-node
+  #  tolerations:
+  #  - key: s3-node
+  #    operator: Exists
+  #  podAffinity:
+  #  podAntiAffinity:
+  #resourceProfile: embedded
+  resources:
+  #  limits:
+  #    cpu: "500m"
+  #    memory: "1024Mi"
+  #  requests:
+  #    cpu: "500m"
+  #    memory: "1024Mi"

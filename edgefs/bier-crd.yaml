@@ -1,0 +1,7 @@
+apiVersion: edgefs.rook.io/v1
+kind: S3
+metadata:
+  name: s3-bier
+  namespace: rook-edgefs
+spec:
+  instances: 1
