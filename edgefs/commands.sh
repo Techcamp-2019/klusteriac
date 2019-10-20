@@ -1,9 +1,20 @@
+cd cluster/examples/kubernetes/edgefs
+kubectl create -f operator.yaml
+
+# verify the rook-edgefs-operator, and rook-discover pods are in the `Running` state before proceeding
+kubectl -n rook-edgefs-system get pod
+
+kubectl create -f cluster.yaml
+
+kubectl -n rook-edgefs get pod
+
+
+
 #https://rook.io/docs/rook/v1.1/edgefs-s3-crd.html
 
 kubectl get po --all-namespaces | grep edgefs-mgr
 
-
-kubectl exec -it -n rook-edgefs rook-edgefs-mgr-6cb9597469-czr7p -- env COLUMNS=$COLUMNS LINES=$LINES TERM=linux toolbox
+kubectl exec -it -n rook-edgefs rook-edgefs-mgr-5f6d6fd4c8-twbdq -- env COLUMNS=$COLUMNS LINES=$LINES TERM=linux toolbox
 
 
 efscli system status
